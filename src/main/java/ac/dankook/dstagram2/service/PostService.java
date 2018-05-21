@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 
 //@Service //root- context가 긁어간다
 public interface PostService {
+    Integer postPost();
     Post getPost();
-
+    Integer putPost();
+    Integer deletePost();
 }

@@ -3,9 +3,25 @@
                 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
                 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="postMapper">
+    <insert id="insertPostOne" >
+        INSERT INTO post VALUES ('abcd','abcd Univ.');
+    </insert>
+
+
     <select id="selectPostOne" resultType="ac.dankook.dstagram2.data.Post">
         SELECT *
-        FROM timeline
-        WHERE share=50;
+        FROM post
+        WHERE id=#{id};
     </select>
+
+
+    <update id="updatePostOne">
+       UPDATE post
+       set title='ooo'
+       WHERE id=3;
+    </update>
+
+    <delete id="deletePostOne">
+         DELETE FROM follower WHERE info=1;
+    </delete>
 </mapper>

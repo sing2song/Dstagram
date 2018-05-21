@@ -15,25 +15,31 @@ public class TemplateRestController {
     private PostService postService;
 
     @RequestMapping(value = "/rest/post",method = RequestMethod.POST)
-    public Post getPost() {
-        Post post = postService.getPost();
-
-        // Post post = new Post();
-       // post.setTitle("Post");
-       // post.setContent("dankook univ.");
+    public Post createPost() {
+       Post post = new Post();
+       post.setTitle("Post");
+       post.setContent("dankook univ.");
 
         return post;
         //return postService.getPost();//예시일 뿐 현업에서는 이렇게 사용x
     }
-    @RequestMapping(value = "/rest/post",method = RequestMethod.GET)
+    @RequestMapping(value = "/rest/post/get",method = RequestMethod.GET)
     public Post resultPost() {
-        Post post = new Post();
+       Post post = postService.getPost();
+        return post;
+        //return postService.getPost();//예시일 뿐 현업에서는 이렇게 사용x
+    }
+    @RequestMapping(value = "/rest/post/update",method = RequestMethod.POST)
+    public Integer updatePost() {
+        Integer post = postService.putPost();
 
-        post.setTitle("Get");
-        post.setContent("dankook univ.");
+        return post;
+        //return postService.getPost();//예시일 뿐 현업에서는 이렇게 사용x
+    }  @RequestMapping(value = "/rest/post/delete",method = RequestMethod.POST)
+    public Integer deletePost() {
+        Integer post = postService.deletePost();
 
         return post;
         //return postService.getPost();//예시일 뿐 현업에서는 이렇게 사용x
     }
-
 }

@@ -12,15 +12,31 @@ public class PostServiceImpl implements PostService{
    private  static final Logger LOGGER = LoggerFactory.getLogger(PostServiceImpl.class);
    @Autowired
    private PostRepository postRepository;
-   public Post getPost() {
+
+    public Integer postPost() {
+        Integer post = postRepository.insertPostOne();
+return postRepository.insertPostOne();
+    }
+
+    public Post getPost() {
        // Post post = new Post();
       //  post.setTitle("ssong");
        // post.setContent("gpgpgpgpgp Univ");
 
-        Post post = postRepository.getPostOne();
+       Post post = postRepository.selectPostOne();
 
         LOGGER.debug("안녀어어엉~");
 
-         return post;
+         return postRepository.selectPostOne();
  }
+
+    public Integer putPost() {
+        Integer post = postRepository.updatePostOne();
+        return post;
+    }
+
+    public Integer deletePost() {
+        Integer post = postRepository.deletePostOne();
+        return post;
+    }
 }

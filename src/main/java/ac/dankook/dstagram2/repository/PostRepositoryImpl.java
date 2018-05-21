@@ -11,7 +11,19 @@ public class PostRepositoryImpl implements PostRepository {
     @Autowired
     private SqlSession sqlSession;
 
-    public Post getPostOne() {
+    public Integer insertPostOne() {
+        return sqlSession.insert("postMapper.insertPostOne");
+    }
+
+    public Post selectPostOne() {
         return sqlSession.selectOne("postMapper.selectPostOne");
+    }
+
+    public Integer updatePostOne() {
+        return null;
+    }
+
+    public Integer deletePostOne() {
+        return null;
     }
 }
