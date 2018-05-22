@@ -17,7 +17,7 @@ $(document).ready(function () {
         });
     });
     $getMore.on('click', function () {
-        $.get("rest/post/get", {}, function (result) {
+        $.get("rest/post", {}, function (result) {
             console.dir(result);
             var $content = $getMore.prev();
             var $title = $content.prev();
